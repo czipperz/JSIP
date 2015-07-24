@@ -12,14 +12,13 @@ This means that you can use these as variables, no problem.
 
 Example:
 
-    ;;; Animal.jp
-    :public :abstract                           ; use descriptors at beginning of class definition
-    (defvar String ((name "Rover" :getter)))    ; `private' by default
-    (defvar int :private ((age 0 :getter)))     ; `:getter' auto generates a getter `getAge()'
+    (defclass Person
+      :public :abstract                           ; use descriptors at beginning of class definition
+      (defvar String ((name "Rover" :getter)))    ; `private' by default
+      (defvar int :private ((age 0 :getter)))     ; `:getter' auto generates a getter `getAge()'
 
-    (defsig birthday (() . void))               ; () == null
-    (defun birthday () "Give this person a birthday" :public
-           (++ age))
+      (defsig birthday (() . void))               ; () == null
+      (defun birthday () "Give this person a birthday" :public
+             (++ age))
 
-    (defsig eat :abstract ((Food) . void))
-    (defsig 
+      (defsig eat :abstract ((Food) . void)))
