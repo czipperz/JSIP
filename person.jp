@@ -1,0 +1,10 @@
+:public :abstract
+(defvar String ((name "Rover" :getter)))
+(defvar Int ((age 0 :getter)))
+
+(defsig birthday (() . void))
+(defun birthday () "Give this person a birthday"
+       :public
+       (++ age))
+
+(defsig sayHi (() . void))
